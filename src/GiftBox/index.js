@@ -108,6 +108,7 @@ function Bow() {
           maxWidth: "60vw",
           maxHeight: "60vh",
         }}
+        alt=""
       ></img>
     </CenteringDiv>
   );
