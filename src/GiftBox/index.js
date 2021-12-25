@@ -99,7 +99,7 @@ function Paper() {
   );
 }
 
-function Gift({ img, note }) {
+function Gift({ img, note, link, linkDescription }) {
   return (
     <CenteringDiv>
       <div
@@ -117,7 +117,21 @@ function Gift({ img, note }) {
             alt=""
           />
         </div>
-        <div style={{ fontSize: "1.5rem" }}>{note}</div>
+        <div
+          style={{ fontSize: "1.5rem", maxWidth: "70vw", textAlign: "center" }}
+        >
+          {note}
+        </div>
+        <div
+          style={{
+            fontSize: "1rem",
+            marginTop: "15px",
+            maxWidth: "70vw",
+            textAlign: "center",
+          }}
+        >
+          {link && linkDescription && <a href={link}>{linkDescription}</a>}
+        </div>
       </div>
     </CenteringDiv>
   );
@@ -180,8 +194,22 @@ export function GiftBox() {
   const params = queryString.parse(window.location.hash.replace("#/gift?", ""));
 
   return (
-    <div style={{ width: "100vw", height: "100vh" }}>
-      <Gift img={decode(params.img)} note={decode(params.note)} />
+    <div
+      style={{
+        width: "100vw",
+        height: "100vh",
+        overflow: "clip",
+        position: "relative",
+      }}
+    >
+      <Gift
+        img={decode(params.img)}
+        note={decode(params.note)}
+        link={params.link && decode(params.link)}
+        linkDescription={
+          params.linkDescription && decode(params.linkDescription)
+        }
+      />
       <UnwrapEverything
         elements={
           decode(params.mode || "") === "skip"
