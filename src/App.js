@@ -1,6 +1,13 @@
 import { GiftBox } from "./GiftBox";
+import { HashRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-  return <GiftBox></GiftBox>;
+  return (
+    <HashRouter>
+      <Routes>
+        <Route path="gift" element={<GiftBox />}></Route>
+      </Routes>
+    </HashRouter>
+  );
 }
 export default App;

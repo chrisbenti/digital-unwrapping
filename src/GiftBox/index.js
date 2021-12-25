@@ -96,7 +96,7 @@ function Paper() {
 }
 
 function Gift() {
-  return <CenteringDiv>💩</CenteringDiv>;
+  return <CenteringDiv>GIFT WILL GO HERE</CenteringDiv>;
 }
 
 function Bow() {
