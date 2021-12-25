@@ -5,7 +5,7 @@ import queryString from "query-string";
 
 import { useState } from "react";
 
-import { encode, decode } from "js-base64";
+import { decode } from "js-base64";
 
 function CenteringDiv({ children }) {
   return (
@@ -111,7 +111,11 @@ function Gift({ img, note }) {
         }}
       >
         <div style={{ border: "solid 3px gold", marginBottom: "1rem" }}>
-          <img src={img} style={{ maxHeight: "70vh", maxWidth: "70vw" }} />
+          <img
+            src={img}
+            style={{ maxHeight: "70vh", maxWidth: "70vw" }}
+            alt=""
+          />
         </div>
         <div style={{ fontSize: "1.5rem" }}>{note}</div>
       </div>
